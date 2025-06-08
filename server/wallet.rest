@@ -1,0 +1,13 @@
+### Create a new wallet
+POST http://127.0.0.1:3000/wallets
+Content-Type: application/json
+
+{}
+
+### Import a wallet from mnemonic
+POST http://127.0.0.1:3000/wallets
+Content-Type: application/json
+
+{
+  "mnemonic": "sad memory range silver step canvas field subway account mountain cook theme"
+}
