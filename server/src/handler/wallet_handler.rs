@@ -1,14 +1,14 @@
 use crate::model::wallet_model::{WalletRequest, WalletResponse, WalletStore};
 use axum::Json;
+use axum::extract::{Path, State};
 use axum::response::IntoResponse;
-use axum::extract::{State, Path};
 use bdk::bitcoin::Network;
 use bdk::database::MemoryDatabase;
 use bdk::keys::{DerivableKey, ExtendedKey, GeneratableKey, bip39::Mnemonic};
-use bdk::wallet::{Wallet, AddressIndex};
+use bdk::wallet::{AddressIndex, Wallet};
 use nanoid::nanoid;
-use tracing::info;
 use serde::Serialize;
+use tracing::info;
 
 #[derive(Clone)]
 pub struct AppState {
